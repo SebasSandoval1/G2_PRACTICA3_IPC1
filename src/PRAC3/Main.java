@@ -3,6 +3,8 @@ package PRAC3;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hola compañeros");
+
+        System.out.println("Imaginate que funcione xd");
+
     }
 }
