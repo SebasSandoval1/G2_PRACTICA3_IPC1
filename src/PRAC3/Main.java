@@ -6,6 +6,7 @@ public class Main {
 
         System.out.println("Imaginate que funcione xd");
         System.out.println("a ver si el mio funciona :c");
+        System.out.println("IDEA");
 
     }
 }
