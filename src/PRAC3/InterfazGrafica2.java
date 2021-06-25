@@ -1,6 +1,4 @@
-package InterfazGrafica;
-
-
+package PRAC3;
 
 import javax.swing.*;
 import java.awt.*;
