@@ -10,11 +10,14 @@ import java.awt.event.MouseListener;
 
 public class InterfazGrafica3 extends JFrame {
 
+    String op1,op2,op3;
+
     public InterfazGrafica3(){
 
         this.setTitle("Gráfica de Notas");
         this.getContentPane().setBackground(new Color(159, 161, 41));
         this.setBounds(20,20,1320,610);
+        this.setLocationRelativeTo(null);
 
         //espacio para pedirle al usuario el tipo de ordenamiento que quiere
 
@@ -151,9 +154,195 @@ public class InterfazGrafica3 extends JFrame {
         ascendent.setFont(new Font("Comic Sans MS", Font.PLAIN, 21));
         ascendent.setBounds(75,75,450,85);
 
+        //boton ejecutar acciones
+        JButton botonr = new JButton();
+        botonr.setText("Ejecutar");
+        botonr.setBounds(1000,450,100,25);
+        //accion al boton
+        ActionListener accion = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                op1=opcAlgoritmo.getSelectedItem().toString();
+                op2=opciones.getSelectedItem().toString();
+                op3=opcVelocity.getSelectedItem().toString();
+                Resultados ab = new Resultados();
+                ab.Ventana();
+                //ascendente media
+                if (op1.equals("Bubble")&& op2.equals("Ascendente")&&op3.equals("Media")){
+
+                    Thread o = new Thread(new Ordenamientos() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(1000);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+                if (op1.equals("Quick")&& op2.equals("Ascendente")&&op3.equals("Media")){
+
+                    Thread o = new Thread(new Ordenamientos() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(1000);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+                //descendente media
+                if (op1.equals("Bubble")&& op2.equals("Descendente")&&op3.equals("Media")){
+
+                    Thread o = new Thread(new OrdenamientoD() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(1000);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+                if (op1.equals("Quick")&& op2.equals("Descendente")&&op3.equals("Media")){
+
+                    Thread o = new Thread(new OrdenamientoQD() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(1000);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+                //ascendente rapido
+                if (op1.equals("Bubble")&& op2.equals("Ascendente")&&op3.equals("Alta")){
+
+                    Thread o = new Thread(new Ordenamientos() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(500);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+                if (op1.equals("Quick")&& op2.equals("Ascendente")&&op3.equals("Alta")){
+
+                    Thread o = new Thread(new Ordenamientos() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(500);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+                //descendente rapido
+                if (op1.equals("Bubble")&& op2.equals("Descendente")&&op3.equals("Alta")){
+
+                    Thread o = new Thread(new OrdenamientoD() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(500);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+                if (op1.equals("Quick")&& op2.equals("Descendente")&&op3.equals("Alta")){
+
+                    Thread o = new Thread(new OrdenamientoQD() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(500);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+
+                //
+                //ascendente lento
+                if (op1.equals("Bubble")&& op2.equals("Ascendente")&&op3.equals("Baja")){
+
+                    Thread o = new Thread(new Ordenamientos() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(2000);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+                if (op1.equals("Quick")&& op2.equals("Ascendente")&&op3.equals("Baja")){
+
+                    Thread o = new Thread(new Ordenamientos() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(2000);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+                //descendente lento
+                if (op1.equals("Bubble")&& op2.equals("Descendente")&&op3.equals("baja")){
+
+                    Thread o = new Thread(new OrdenamientoD() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(2000);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+                if (op1.equals("Quick")&& op2.equals("Descendente")&&op3.equals("baja")){
+
+                    Thread o = new Thread(new OrdenamientoQD() );
+                    Thread p = new Thread(new GraficaNotas());
+                    o.start();
+                    p.start();
+                    try {
+                        o.sleep(2000);
+                    } catch (Exception exception) {
+                        System.out.println("Error");
+                    }
+
+                }
+
+
+
+            }
+        };
+        botonr.addActionListener(accion);
+
+
 
         //para ser visualizado en pantalla
-
+        this.add(botonr);
         this.add(tituOrden);
         this.add(Algoritmo);
         this.add(Velo);

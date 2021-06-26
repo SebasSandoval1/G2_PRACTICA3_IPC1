@@ -1,15 +1,17 @@
 package PRAC3;
 
 import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-public class GraficaNotas {
+public class GraficaNotas implements Runnable{
     public static int n1,n2,n3,n4,n5,n6,n7,n8,n9,n10;
 
-
-    public void DatosNotas(){
+    @Override
+    public void run() {
         //recorrer el arreglo de asignaciones
         for (int i = 0; i <CargaDeDatos.ArrayAsignaciones.length ; i++) {
             //buscamos los id que coincidan con el curso
@@ -32,10 +34,6 @@ public class GraficaNotas {
 
         }
 
-
-    }
-
-    public void GragicaNotas(){
         //datos de la grafica
         //cantidad,nombre de la categoria, nombre de la barra
         DefaultCategoryDataset data = new DefaultCategoryDataset();
@@ -51,11 +49,14 @@ public class GraficaNotas {
         data.setValue(n10,"Notas","91-100");
         //creacion grafico de barras
         JFreeChart grafico_barras = ChartFactory.createBarChart3D("Grafica de Notas","Cantidad","Nota",data, PlotOrientation.VERTICAL,true,true,false);
+        ChartFrame ventanagraf = new ChartFrame("Grafico de Notas",grafico_barras);
+        ventanagraf.pack();
+        ventanagraf.setVisible(true);
+        ventanagraf.setLocationRelativeTo(null);
 
 
 
 
     }
-
 
 }
