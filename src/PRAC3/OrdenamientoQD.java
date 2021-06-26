@@ -2,8 +2,21 @@ package PRAC3;
 
 public class OrdenamientoQD implements Runnable{
 
+    static long tiempoInicio;
+    static long tiempoFinal;
+    static long tiempi;
+    static String tiempo;
+
+
     @Override
     public void run() {
+
+
+        //ESTO ES PARA TIEMPO EN NANOSEGUNDOS
+
+        tiempoInicio = System.nanoTime();
+        tiempoFinal = System.nanoTime();
+
 
         //arreglo auxiliar
         Asignaciones [] aux = new Asignaciones[1];
@@ -25,6 +38,10 @@ public class OrdenamientoQD implements Runnable{
                 }
 
             }
+
+        //Resta del tiempo final menos el tiempo de inicio
+        tiempi=tiempoFinal-tiempoInicio;
+        tiempo = String.valueOf(tiempi);
 
         }
 
