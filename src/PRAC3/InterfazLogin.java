@@ -78,10 +78,9 @@ public class InterfazLogin extends JFrame {
 
         CargaDatosAlumnos = new JButton("Enviar Ruta Alumnos");
         CargaDatosAlumnos.setBounds(990, 110, 180, 30);
-
+        //boton para recibir el id del curso a graficar
         CargaCodigoCurso = new JButton("Aceptar");
         CargaCodigoCurso.setBounds(280, 290, 130, 30);
-
 
         //codigo del curso
         CargaCodigoCurso.addMouseListener(new MouseListener() {
@@ -159,6 +158,7 @@ public class InterfazLogin extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 //grafico de Pie sexos
                 GraficaPie owo = new GraficaPie();
+                owo.DatosObtenidos();
                 owo.Grafica();
             }
 
