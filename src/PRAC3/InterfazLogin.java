@@ -193,6 +193,7 @@ public class InterfazLogin extends JFrame {
             public void mouseClicked(MouseEvent e) {
                //generar grafica de edades
             GraficaEdades owo = new GraficaEdades();
+            owo.Datos();
             owo.Grafica();
 
 
