@@ -258,9 +258,9 @@ public class CargaDeDatos
         }*/
         }
 
-        public void CargaCursos() {//--------------------------------------------------------------------------------------------------------------------
+        public void CargaCursos(String ruta) {//--------------------------------------------------------------------------------------------------------------------
 
-            String ruta = "C:\\Users\\sebas\\OneDrive\\Escritorio\\Cursos.csv";
+
             String ContenidoAlumnos = getContentOfFile(ruta);
 
             String[] Lineasdocumento = ContenidoAlumnos.split("\n");
@@ -446,8 +446,8 @@ public class CargaDeDatos
             }
         }
 
-    public void CargaAsignaciones() {//--------------------------------------------------------------------------------------------------------------------
-        String ruta = "C:\\Users\\sebas\\OneDrive\\Escritorio\\AsigAlumno.csv";
+    public void CargaAsignaciones(String ruta) {//--------------------------------------------------------------------------------------------------------------------
+
         String ContenidoAlumnos = getContentOfFile(ruta);
 
         String[] Lineasdocumento = ContenidoAlumnos.split("\n");

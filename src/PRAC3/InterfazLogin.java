@@ -10,7 +10,7 @@ import java.awt.event.MouseListener;
 
 public class InterfazLogin extends JFrame {
 
-    public static String datoruta;
+    public static String datoruta,datoCodigo;
     public static String datorutaAlumno;
     public static String datorutaCurso;
     public static String datorutaAsig;
@@ -31,16 +31,18 @@ public class InterfazLogin extends JFrame {
     public InterfazLogin() {
 
 
-        this.setTitle("InterfazUsuario");
+        this.setTitle("Interfaz Usuario");
         this.getContentPane().setBackground(new Color(69, 133, 186));
         this.setBounds(20, 20, 1326, 616);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         //etiquetas
 
         JLabel rutaarcAlumnos = new JLabel();
-        rutaarcAlumnos.setText("Ingrese la ruta de loa Archivos: ");
+        rutaarcAlumnos.setText("Ingrese la ruta de los Archivos: ");
         rutaarcAlumnos.setFont(new Font("Comic Sans MS", Font.PLAIN, 21));
-        rutaarcAlumnos.setBounds(75, 75, 450, 85);
+        rutaarcAlumnos.setBounds(220, 80, 450, 85);
 
 
 
@@ -52,7 +54,7 @@ public class InterfazLogin extends JFrame {
         JLabel graficas = new JLabel();
         graficas.setText("Generador Gráficas");
         graficas.setFont(new Font("Cooper Black", Font.PLAIN, 28));
-        graficas.setBounds(500, 220, 250, 85);
+        graficas.setBounds(500, 220, 300, 85);
 
         JLabel elegir = new JLabel();
         elegir.setText("Elija una opción: ");
@@ -75,19 +77,54 @@ public class InterfazLogin extends JFrame {
         //botón para recibir la ruta de archivo .CSV
 
         CargaDatosAlumnos = new JButton("Enviar Ruta Alumnos");
-        CargaDatosAlumnos.setBounds(980, 100, 180, 50);
+        CargaDatosAlumnos.setBounds(990, 110, 180, 30);
 
         CargaCodigoCurso = new JButton("Aceptar");
-        CargaCodigoCurso.setBounds(280, 280, 150, 50);
+        CargaCodigoCurso.setBounds(280, 290, 130, 30);
 
+
+        //codigo del curso
+        CargaCodigoCurso.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                datoCodigo = codigoCurso.getText();
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.println("Enviando ruta de archivo...");
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
 
         CargaDatosAlumnos.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 datoruta = rutaAlumnosJT.getText();
-                System.out.println(datoruta+"\\Alumnos.csv");
+
                 CargaDeDatos uwu = new CargaDeDatos();
-                uwu.CargaAlumnos(datoruta);
+                uwu.CargaAlumnos(datoruta+"\\Alumnos.csv");
+
+                CargaDeDatos uwu2 = new CargaDeDatos();
+                uwu2.CargaCursos(datoruta+"\\Cursos.csv");
+
+                CargaDeDatos uwu3 = new CargaDeDatos();
+                uwu3.CargaAsignaciones(datoruta+"\\Asignaciones.csv");
 
             }
 
@@ -120,8 +157,9 @@ public class InterfazLogin extends JFrame {
         graficaPorSexo.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                InterfazGrafica1 graficauno = new InterfazGrafica1();
-                graficauno.setVisible(true);
+                //grafico de Pie sexos
+                GraficaPie owo = new GraficaPie();
+                owo.Grafica();
             }
 
             @Override
@@ -153,11 +191,9 @@ public class InterfazLogin extends JFrame {
         graficaPorEdad.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                InterfazGrafica2 graficados = new InterfazGrafica2();
-                graficados.setVisible(true);
-
-
-
+               //generar grafica de edades
+            GraficaEdades owo = new GraficaEdades();
+            owo.Grafica();
 
 
             }
