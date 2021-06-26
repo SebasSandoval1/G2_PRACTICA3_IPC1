@@ -65,10 +65,9 @@ public class CargaDeDatos
         return "";
     }
 
-    public void CargaAlumnos() {//--------------------------------------------------------------------------------------------------------------------
+    public void CargaAlumnos(String ruta) {//--------------------------------------------------------------------------------------------------------------------
 
 
-        String ruta = "C:\\Users\\sebas\\Downloads\\Alumnos.csv";
         String ContenidoAlumnos = getContentOfFile(ruta);
 
         String[] Lineasdocumento = ContenidoAlumnos.split("\n");
