@@ -38,19 +38,11 @@ public class InterfazLogin extends JFrame {
         //etiquetas
 
         JLabel rutaarcAlumnos = new JLabel();
-        rutaarcAlumnos.setText("Ingrese la ruta del archivo Alumnos.CSV: ");
+        rutaarcAlumnos.setText("Ingrese la ruta de loa Archivos: ");
         rutaarcAlumnos.setFont(new Font("Comic Sans MS", Font.PLAIN, 21));
         rutaarcAlumnos.setBounds(75, 75, 450, 85);
 
-        JLabel rutaarcCursos = new JLabel();
-        rutaarcCursos.setText("Ingrese la ruta del archivo Cursos.CSV: ");
-        rutaarcCursos.setFont(new Font("Comic Sans MS", Font.PLAIN, 21));
-        rutaarcCursos.setBounds(75, 125, 450, 85);
 
-        JLabel rutaarAsignaciones = new JLabel();
-        rutaarAsignaciones.setText("Ingrese la ruta del archivo Asignaciones.CSV: ");
-        rutaarAsignaciones.setFont(new Font("Comic Sans MS", Font.PLAIN, 21));
-        rutaarAsignaciones.setBounds(75, 175, 450, 85);
 
         JLabel titu = new JLabel();
         titu.setText("MENU DE APLICACION");
@@ -76,10 +68,7 @@ public class InterfazLogin extends JFrame {
 
         rutaAlumnosJT = new JTextField();
         rutaAlumnosJT.setBounds(530, 110, 450, 30);
-        rutaCursosJT = new JTextField();
-        rutaCursosJT.setBounds(530, 160, 450, 30);
-        rutaAsignacionesJT = new JTextField();
-        rutaAsignacionesJT.setBounds(530, 210, 450, 30);
+
         codigoCurso = new JTextField();
         codigoCurso.setBounds(430, 290, 450, 30);
 
@@ -87,10 +76,7 @@ public class InterfazLogin extends JFrame {
 
         CargaDatosAlumnos = new JButton("Enviar Ruta Alumnos");
         CargaDatosAlumnos.setBounds(980, 100, 180, 50);
-        CargaDatosCursos = new JButton("Enviar Ruta Cursos");
-        CargaDatosCursos.setBounds(980, 150, 180, 50);
-        CargaDatosAsignaciones = new JButton("Enviar Ruta Asignaciones");
-        CargaDatosAsignaciones.setBounds(980, 200, 180, 50);
+
         CargaCodigoCurso = new JButton("Aceptar");
         CargaCodigoCurso.setBounds(280, 280, 150, 50);
 
@@ -99,7 +85,7 @@ public class InterfazLogin extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 datoruta = rutaAlumnosJT.getText();
-                System.out.println(datoruta);
+                System.out.println(datoruta+"\\Alumnos.csv");
                 CargaDeDatos uwu = new CargaDeDatos();
                 uwu.CargaAlumnos(datoruta);
 
@@ -233,16 +219,13 @@ public class InterfazLogin extends JFrame {
         this.add(CargaDatosAlumnos);
         this.add(CargaCodigoCurso);
         this.add(rutaAlumnosJT);
-        this.add(CargaDatosCursos);
-        this.add(rutaCursosJT);
-        this.add(CargaDatosAsignaciones);
-        this.add(rutaAsignacionesJT);
+
+
         this.add(graficaPorSexo);
         this.add(graficaPorEdad);
         this.add(graficaNotas);
         this.add(rutaarcAlumnos);
-        this.add(rutaarcCursos);
-        this.add(rutaarAsignaciones);
+
         this.add(graficas);
         this.add(titu);
         this.add(elegir);
