@@ -228,8 +228,9 @@ public class InterfazLogin extends JFrame {
         graficaNotas.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                InterfazGrafica3 graficatres = new InterfazGrafica3();
-                graficatres.setVisible(true);
+                //InterfazGrafica3 graficatres = new InterfazGrafica3();
+                //graficatres.setVisible(true);
+
             }
 
             @Override
